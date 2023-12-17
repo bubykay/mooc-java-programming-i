@@ -15,6 +15,7 @@ public class NumbersFromAFile {
         System.out.print("Upper bound? ");
         int upperBound = Integer.valueOf(scanner.nextLine());
         Integer count = 0;
+        System.out.println("sdfas");
 
         try {
             Scanner fileScanner = new Scanner(Paths.get(file));
