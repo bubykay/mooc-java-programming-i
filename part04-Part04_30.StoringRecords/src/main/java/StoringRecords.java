@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,6 +26,16 @@ public class StoringRecords {
 
         // Write here the code for reading from file
         // and printing the read records
+        try {
+            Scanner fileScanner = new Scanner(Paths.get(file));
+            while (fileScanner.hasNextLine()) {
+                String[] data = fileScanner.nextLine().split(",");
+                persons.add(new Person(data[0], Integer.valueOf(data[1])));
+            }
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
         return persons;
 
     }
